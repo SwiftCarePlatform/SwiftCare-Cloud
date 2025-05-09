@@ -9,6 +9,7 @@ resource "aws_instance" "swiftcare_instance" {
   ami                         = var.ami_id
   instance_type               = var.instance_type
   key_name                    = var.key_name
+  subnet_id                   = aws_subnet.swiftcare_subnet.id
   availability_zone           = "eu-north-1a"
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.swiftcare_sg.id]
@@ -21,6 +22,7 @@ resource "aws_instance" "swiftcare_instance" {
 resource "aws_security_group" "swiftcare_sg" {
   name        = "swiftcare_sg"
   description = "Allow web traffic"
+  vpc_id      = aws_vpc.swiftcare_vpc.id
 
   ingress {
     from_port   = 80
