@@ -28,5 +28,5 @@ variable "dockerhub_secret" {
 }
 
 variable "bucket_name" {
-  default = "swiftcare-app-storage-bucket"
+  default = "swiftcare-app-storage-bucket-1"
 }
