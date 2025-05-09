@@ -98,7 +98,7 @@ resource "aws_instance" "swiftcare_instance" {
   subnet_id                   = aws_subnet.swiftcare_subnet.id  # Reference subnet
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.swiftcare_sg.id]
-  user_data                   = file("user_data.sh")
+# user_data                   = file("user_data.sh")
   tags = {
     Name = "swiftcare-server"
   }
