@@ -18,7 +18,7 @@ variable "aws_secret_key" {
   default = "SWIFTCARE_AWS_SECRET_KEY"
 }
 variable "key_name" {
-  default = "swiftcare2_keypair.pem"
+  default = "swiftcare2_keypair"
 }
 variable "dockerhub_username" {
   default = "DOCKER_HUB_USERNAME"
