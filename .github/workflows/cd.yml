@@ -1,5 +1,5 @@
 
-name: Terraform Deploy EC2
+name: Terraform Deploy EC2 (CD)
 
 on:
   push:
