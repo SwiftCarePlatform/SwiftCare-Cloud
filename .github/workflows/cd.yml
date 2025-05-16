@@ -4,7 +4,7 @@ name: Terraform Deploy EC2 (CD)
 on:
   push:
     branches:
-      - debug_cdpipeline
+      - main
 
 jobs:
   deploy:
