@@ -1,7 +1,7 @@
 name: Terraform Destroy EC2 (CD)
 
 on:
-  workflow_dispatch:   # Manual trigger from GitHub UI
+  workflow_dispatch:   # Manual trigger from GitHub
 
 jobs:
   destroy:
