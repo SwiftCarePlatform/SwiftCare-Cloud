@@ -1,7 +1,5 @@
 provider "aws" {
-  profile    = var.aws_profile
   region     = var.region
-  skip_credentials_validation = false
 }
 
 # Define VPC

@@ -1,6 +1,6 @@
-variable "aws_profile" {
-  default = "SwiftCare_Deploy"
-}
+#variable "aws_profile" {
+  #default = "SwiftCare_Deploy"
+#}
 
 variable "region" {
   default = "eu-north-1"
