@@ -15,13 +15,13 @@ variable "instance_type" {
 }
 
 variable "aws_access_key" {
-  default = "aws_access_key_id"
+  default = "SWIFTCARE_AWS_ACCESS_KEY"
 }
 variable "aws_secret_key" {
-  default = "aws_secret_access_key"
+  default = "SWIFTCARE_AWS_SECRET_KEY"
 }
 variable "key_name" {
-  default = "swiftcare2_keypair"
+  default = "SWIFTCARE2_KEYPAIR"
 }
 variable "dockerhub_username" {
   default = "DOCKER_HUB_USERNAME"
