@@ -1,3 +1,6 @@
+variable "aws_profile" {
+  default = "SwiftCare_Deploy"
+}
 
 variable "region" {
   default = "eu-north-1"
@@ -12,10 +15,10 @@ variable "instance_type" {
 }
 
 variable "aws_access_key" {
-  default = "SWIFTCARE_AWS_ACCESS_KEY"
+  default = "aws_access_key_id"
 }
 variable "aws_secret_key" {
-  default = "SWIFTCARE_AWS_SECRET_KEY"
+  default = "aws_secret_access_key"
 }
 variable "key_name" {
   default = "swiftcare2_keypair"
@@ -28,5 +31,5 @@ variable "dockerhub_secret" {
 }
 
 variable "bucket_name" {
-  default = "swiftcare-app-storage-bucket-1"
+  default = "swiftcare-app-storage-bucket-cloud"
 }

@@ -1,7 +1,6 @@
 provider "aws" {
+  profile    = var.aws_profile
   region     = var.region
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
 }
 
 # Define VPC
@@ -107,10 +106,14 @@ resource "aws_instance" "swiftcare_instance" {
 # Define S3 Bucket
 resource "aws_s3_bucket" "swiftcare_bucket" {
   bucket = var.bucket_name
-  acl    = "private"
 
   tags = {
     Name        = "swiftcare-s3"
     Environment = "Production"
   }
 }
+
+# resource "aws_s3_bucket_acl" "swiftcare_acl" {
+#  bucket = aws_s3_bucket.swiftcare_bucket.id
+#  acl    = "private"
+# }
