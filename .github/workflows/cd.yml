@@ -1,0 +1,40 @@
+
+name: Terraform Deploy EC2 (CD)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy EC2 with Docker Images
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.SWIFTCARE_AWS_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.SWIFTCARE_AWS_SECRET_KEY }}
+      TF_VAR_aws_access_key: ${{ secrets.SWIFTCARE_AWS_ACCESS_KEY }}
+      TF_VAR_aws_secret_key: ${{ secrets.SWIFTCARE_AWS_SECRET_KEY }}
+      TF_VAR_key_name: ${{ secrets.SWIFTCARE_KEYPAIR }}
+      dockerhub_username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      dockerhub_secret: ${{secrets.DOCKER_HUB_SECRET}}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+
+    - name: Terraform Init
+      working-directory: terraform
+      run: terraform init
+
+    - name: Terraform Plan
+      working-directory: terraform
+      run: terraform plan
+
+    - name: Terraform Apply
+      working-directory: terraform
+      run: terraform apply -auto-approve
